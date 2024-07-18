@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { Card } from 'react-bootstrap';
-import './ItemDetailContainer.css'; 
+import ItemDetail from './ItemDetail';
 
 function ItemDetailContainer() {
   const { id } = useParams();
@@ -12,7 +11,7 @@ function ItemDetailContainer() {
     const fetchItem = async () => {
       try {
         const response = await axios.get(`https://dummyjson.com/products/${id}`);
-        setItem(response.data);
+        setItem(response.data); 
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -22,22 +21,13 @@ function ItemDetailContainer() {
   }, [id]);
 
   if (!item) {
-    return <div>Loading...</div>;
+    return <div>Loading...</div>; 
   }
 
   return (
-    <Card className="item-detail-card">
-      <Card.Img variant="top" src={item.thumbnail} />
-      <Card.Body>
-        <Card.Title>{item.title}</Card.Title>
-        <Card.Text>
-          {item.description}
-        </Card.Text>
-        <Card.Text>
-          Price: ${item.price}
-        </Card.Text>
-      </Card.Body>
-    </Card>
+    <div>
+      <ItemDetail item={item} />
+    </div>
   );
 }
 

@@ -1,21 +1,14 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React from 'react';
+import CartWidget from './CartWidget';
 
-function Header() {
+function Header({ cartItems }) {
   return (
     <header>
-        <>
-          <h1>HOME</h1>
-        </>
-        <>
-            <Navbar />
-        </>
-        
-        
+      <nav>
+        <CartWidget cartItems={cartItems} />
+      </nav>
     </header>
-    
-
-  )
+  );
 }
 
-export default Header 
+export default Header;

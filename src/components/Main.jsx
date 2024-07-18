@@ -1,18 +1,16 @@
-function Main() {
-    return(
-        <main>
-           <>
-             <h2> Bienvenidos </h2>
-           </>
-            <>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, voluptate maxime atque ipsum 
-                    expedita vel totam, blanditiis a cumque officiis, commodi illo accusantium. Assumenda quas 
-                    facilis cumque, modi doloremque eligendi.
-                </p>
-            </>
-        </main>
+import React from 'react';
 
-    )
+function Main() {
+  return (
+    <main>
+      <>
+        <h2>Bienvenidos</h2>
+      </>
+      <>
+        <p>Gracias por elegirnos para tus compras. Esperamos que encuentres exactamente lo que buscas.</p>
+      </>
+    </main>
+  );
 }
 
 export default Main;
